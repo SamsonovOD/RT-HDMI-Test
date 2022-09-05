@@ -1,0 +1,7 @@
+
+ffmpeg -y -rtbufsize 1000M -f dshow -i video="AVerMedia HD Capture C985 Bus 3" -video_size 1920 1080 -acodec aac -ar 44100 -ac 2 -b:a 32k -vcodec libx264 -bufsize 1028m -r 59 -b:v 100k -crf 0 -pix_fmt yuv444p -preset slow -f mpegts udp://127.0.0.1:5000
+
+
+ECHO ============================
+ffmpeg -y -f dshow -rtbufsize 500M -i video="AVerMedia HD Capture C985 Bus 3" -s 1280x720 -r 59 -crf 1 -an -vcodec libx264 -f mpegts udp://127.0.0.1:2000
+"cmd /k"
